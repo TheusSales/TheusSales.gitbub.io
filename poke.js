@@ -10,7 +10,12 @@ async function buscar(){
         mostrarPokemon(data,pokeName);
         //const prettyData = JSON.stringify(data, null, 2);
     } catch (error) {
-        window.alert(`Ocorreu um erro: ${error}`);
+        if (error instanceof SyntaxError){
+            window.alert(`Nome do pokémon inválido`);
+        }
+        else{
+            window.alert(`Ocorreu um erro: ${error}`);
+        }
     }
 }
 
